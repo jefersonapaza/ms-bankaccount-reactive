@@ -1,11 +1,12 @@
 package nttdata.bootcamp.quarkus.bankaccount.entity;
 
+import io.quarkus.mongodb.panache.common.MongoEntity;
 import io.quarkus.mongodb.panache.reactive.ReactivePanacheMongoEntity;
 import io.smallrye.mutiny.Multi;
 import org.bson.types.ObjectId;
 
 import java.util.Date;
-
+@MongoEntity(collection="bankaccount")
 public class Bankaccount extends ReactivePanacheMongoEntity {
 
 
@@ -21,6 +22,8 @@ public class Bankaccount extends ReactivePanacheMongoEntity {
     public String mainaccount;
 
     public String estadotarjeta;
+
+    public String cardDebitNumber;
 
     public static Multi<Bankaccount> streamAllBankAccounts() {
         return streamAll();
@@ -80,6 +83,14 @@ public class Bankaccount extends ReactivePanacheMongoEntity {
 
     public void setEstadotarjeta(String estadotarjeta) {
         this.estadotarjeta = estadotarjeta;
+    }
+
+    public String getCardDebitNumber() {
+        return cardDebitNumber;
+    }
+
+    public void setCardDebitNumber(String cardDebitNumber) {
+        this.cardDebitNumber = cardDebitNumber;
     }
 }
 

@@ -15,6 +15,8 @@ public class BankaccountSaveDTO {
 
     public String mainaccount;
 
+    public  String cardDebitNumber;
+
     public Uni<Bankaccount> validator(){
         if(this.numberaccount == null || this.numberaccount.trim().equals("")){
             return Uni.createFrom().failure(new IllegalArgumentException("Number-Account cannot be empty or zero "));
@@ -62,5 +64,13 @@ public class BankaccountSaveDTO {
 
     public void setMainaccount(String mainaccount) {
         this.mainaccount = mainaccount;
+    }
+
+    public String getCardDebitNumber() {
+        return cardDebitNumber;
+    }
+
+    public void setCardDebitNumber(String cardDebitNumber) {
+        this.cardDebitNumber = cardDebitNumber;
     }
 }

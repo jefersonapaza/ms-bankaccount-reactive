@@ -33,6 +33,7 @@ public class BankAccountServiceImpl implements BankAccountService{
         bankaccount.setMainaccount(bankaccountSaveDTO.getMainaccount());
         bankaccount.setNumberaccount(bankaccountSaveDTO.getNumberaccount());
         bankaccount.setOpeningdate(new Date());
+        bankaccount.setCardDebitNumber(bankaccountSaveDTO.getCardDebitNumber());
         return bankaccountRepository.saveBankAccount(bankaccount);
     }
 
