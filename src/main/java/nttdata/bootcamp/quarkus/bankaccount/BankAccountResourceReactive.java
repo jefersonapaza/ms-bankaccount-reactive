@@ -1,24 +1,17 @@
 package nttdata.bootcamp.quarkus.bankaccount;
 
-import entity.Comment;
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 import nttdata.bootcamp.quarkus.bankaccount.dto.BankaccountSaveDTO;
 import nttdata.bootcamp.quarkus.bankaccount.entity.Bankaccount;
 import nttdata.bootcamp.quarkus.bankaccount.service.BankAccountService;
-import org.bson.types.ObjectId;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
-import javax.inject.Inject;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-
-@Path("/api/bank")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
+@Path("/api/bankaccount")
 public class BankAccountResourceReactive {
-
-
-
 
     @Inject
     private BankAccountService service;
@@ -29,6 +22,14 @@ public class BankAccountResourceReactive {
     @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
     public Multi<Bankaccount> getAllBankAccount() {
+        return service.listAll();
+    }
+
+
+    @GET
+    @Path("/all2")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Multi<Bankaccount> getAllBankAccount2() {
         return service.listAll();
     }
 
@@ -57,12 +58,6 @@ public class BankAccountResourceReactive {
     public Uni<Boolean> deleteBankAccount(@PathParam("id") String id) {
         return service.deleteBankAccountById(id);
     }
-
-
-
-
-
-
 
 
 

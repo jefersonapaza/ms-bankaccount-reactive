@@ -5,9 +5,9 @@ import io.smallrye.mutiny.Uni;
 import nttdata.bootcamp.quarkus.bankaccount.dto.BankaccountSaveDTO;
 import nttdata.bootcamp.quarkus.bankaccount.entity.Bankaccount;
 import nttdata.bootcamp.quarkus.bankaccount.repository.BankaccountRepository;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import java.util.Date;
 
 @ApplicationScoped

@@ -1,16 +1,14 @@
 package nttdata.bootcamp.quarkus.bankaccount.repository;
 
-import entity.Comment;
-import entity.Post;
+
 import io.quarkus.mongodb.panache.reactive.ReactivePanacheMongoRepository;
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 import nttdata.bootcamp.quarkus.bankaccount.entity.Bankaccount;
 import org.bson.types.ObjectId;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.NotFoundException;
-import java.util.Optional;
+import jakarta.enterprise.context.ApplicationScoped;
+
 
 
 @ApplicationScoped

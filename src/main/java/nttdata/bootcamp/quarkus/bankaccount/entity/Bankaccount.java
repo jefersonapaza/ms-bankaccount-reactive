@@ -1,6 +1,5 @@
 package nttdata.bootcamp.quarkus.bankaccount.entity;
 
-import entity.Comment;
 import io.quarkus.mongodb.panache.reactive.ReactivePanacheMongoEntity;
 import io.smallrye.mutiny.Multi;
 import org.bson.types.ObjectId;
@@ -83,3 +82,4 @@ public class Bankaccount extends ReactivePanacheMongoEntity {
         this.estadotarjeta = estadotarjeta;
     }
 }
+
